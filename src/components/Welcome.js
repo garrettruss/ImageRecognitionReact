@@ -1,5 +1,3 @@
-//import SimpleSlider from "./Carousel";
-//<SimpleSlider className ="slider" />
 
 function Welcome(props) {
 	return <div className="welcome">
