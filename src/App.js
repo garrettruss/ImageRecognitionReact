@@ -88,10 +88,10 @@ function App() {
   };
 
   const actionButton = {
-    initial: { action: loadModel, text: "Load Model" },
+    initial: { action: loadModel, text: "Load Model"},
     loadingModel: { text: "Loading Model..." },
     modelReady: { action: upload, text: "Upload Image" },
-    imageReady: { action: identify, text: "Identify Breed" },
+    imageReady: { action: identify, text: "Identify Content Of Image" },
     identifying: { text: "Identifying..." },
     complete: { action: reset, text: "Reset" }
   };
@@ -102,7 +102,7 @@ function App() {
     <>
         <Header />
         
-        <div>    
+        <main>    
             {showImage && <img src={imageURL} alt="upload-preview" ref={imageRef} />}
               <input
                 type="file"
@@ -112,19 +112,25 @@ function App() {
                 ref={inputRef}
               />
               {showResults && (
-                <ul>
+                <> 
+                <div>Results
+                   <ul >
                   {results.map(({ className, probability }) => (
-                    <li key={className}>{`${className}: %${(probability * 100).toFixed(
-                      2
-                    )}`}</li>
+                    <li key={className}>
+                      {`${className}: %${(probability * 100).toFixed(2)}`}
+                    </li>
                   ))}
                 </ul>
+                </div>
+                </>
+             
               )}
               <button onClick={actionButton[appState].action || (() => {})}>
                 {actionButton[appState].text}
               </button>
   
-        </div>
+        </main>
+        
         <Welcome />
         <Footer />
     </>     
