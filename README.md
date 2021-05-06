@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# TensorFlow.js Image Classification React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this Single Page React App, users are introduced to Machine Learning. Users can take a picture or import an image to be analyzed by the TensorFlow.js Image Classification Mobilenet model. TensorFlow.js is a JavaScript library developed by Google for training and using machine learning (ML) models in the browser. It contains pretrained models that can be imported into an application without having to train the model yourself. In this format, users don't have to think about things such as Tensors, which are the core datastructure of TensorFlow.js.
 
-## Available Scripts
+In this example, a event-driven finite state machine, along with a reducer, control what state the app is in. The reducer function takes the current state and an event, then return a new state based on whatever that event was fired. Here there is only one type of event called next. Whenever the next event is triggered, it brings you to the next step. useReducer takes 2 arguments, the reducer function and your intital state. State is a string that represents whatever state you are in now. Dispatch is a function that will allow you to fire an event into the reducer function in order to get a new state. Through button onClick you fire off the next event in the dispatch.
 
-In the project directory, you can run:
+Depending on what state you are in, different components will be displayed. This is done because loading of the model and classifying/identifying the predictions are both asynchronous events. We therefore have intermediary states to show the user that we are waiting on the model.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* HTML5
+* CSS3
+* Javascript
+* React
+* Tensorflow.js Library - Mobilenet Model
+* Git/Github
+* Heroku
+* Trello
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Click here](https://tensorflow-react-app.herokuapp.com/) to see the app.
+[Click here](https://trello.com/b/sGXQ43xi/capstone-project) to see the Trello board.
 
-### `npm test`
+### Sources
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [https://www.npmjs.com/package/@tensorflow-models/mobilenet]
+* [https://www.tensorflow.org/js/guide]
+* [https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet]
+* [https://reactjs.org/docs/state-an]
+* [https://dmitripavlutin.com/react-useref-guide/]
+* [https://levelup.gitconnected.com/build-ad-dog-classifier-with-react-and-tensorflow-js-in-minutes-f08e98608a65]
+* [https://reactjs.org/docs/hooks-reference.html]
+* [https://mastery.games/post/state-machines-in-react/]
+* [https://css-tricks.com/understanding-how-reducers-are-used-in-redux/]
+* [https://css-tricks.com/finite-state-machines-with-react/]
+* [https://js.tensorflow.org/api/latest/#setBackend]
+* [https://github.com/typescript-cheatsheets/react]
+* [https://en.wikipedia.org/wiki/Event-driven_finite-state_machine]
+* [https://arxiv.org/abs/1704.04861]
 
-### `npm run build`
+#### Unsolved Issues
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##### Future Enhancements
