@@ -2,7 +2,7 @@
 
 In this Single Page React App, users are introduced to Machine Learning. Users can take a picture or import an image to be analyzed by the TensorFlow.js Image Classification Mobilenet model. TensorFlow.js is a JavaScript library developed by Google for training and using machine learning (ML) models in the browser. It contains pretrained models that can be imported into an application without having to train the model yourself. In this format, users don't have to think about things such as Tensors, which are the core datastructure of TensorFlow.js.
 
-In this example, a event-driven finite state machine, along with a reducer, control what state the app is in. The reducer function takes the current state and an event, then return a new state based on whatever that event was fired. Here there is only one type of event called next. Whenever the next event is triggered, it brings you to the next step. useReducer takes 2 arguments, the reducer function and your intital state. State is a string that represents whatever state you are in now. Dispatch is a function that will allow you to fire an event into the reducer function in order to get a new state. Through button onClick you fire off the next event in the dispatch.
+In this example, an event-driven finite state machine, along with a reducer, control what state the app is in. The reducer function takes the current state and an event, then return a new state based on whatever that event was fired. Here there is only one type of event called next. Whenever the next event is triggered, it brings you to the next step. useReducer takes 2 arguments, the reducer function and your intital state. State is a string that represents whatever state you are in now. Dispatch is a function that will allow you to fire an event into the reducer function in order to get a new state. Through button onClick you fire off the next event in the dispatch.
 
 Depending on what state you are in, different components will be displayed. This is done because loading of the model and classifying/identifying the predictions are both asynchronous events. We therefore have intermediary states to show the user that we are waiting on the model.
 
@@ -23,6 +23,7 @@ Depending on what state you are in, different components will be displayed. This
 ### Sources
 
 * [https://www.npmjs.com/package/@tensorflow-models/mobilenet]
+* [https://www.npmjs.com/package/@tensorflow/tfjs]
 * [https://www.tensorflow.org/js/guide]
 * [https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet]
 * [https://reactjs.org/docs/state-an]
@@ -40,3 +41,5 @@ Depending on what state you are in, different components will be displayed. This
 #### Unsolved Issues
 
 ##### Future Enhancements
+
+* Add a service-worker file for a PWA from react.
