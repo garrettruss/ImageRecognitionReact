@@ -20,6 +20,7 @@ This is all done through the moverButton function which is triggered when a butt
 * Trello
 
 [Click here](https://tensorflow-react-app.herokuapp.com/) to see the app.
+
 [Click here](https://trello.com/b/sGXQ43xi/capstone-project) to see the Trello board.
 
 ### Sources
@@ -46,5 +47,7 @@ This is all done through the moverButton function which is triggered when a butt
 ##### Next
 
 * Use TensorFlow.js in Node. [See here](https://www.tensorflow.org/js/guide/nodejs).
+
 * Build a transfer-learning based image classifier to recognize new classes other than the 1000 pretrained classes. [See here](https://www.tensorflow.org/js/tutorials/transfer/what_is_transfer_learning).
+
 * Build an image classifier app with TensorFlow on Python [See here](https://www.tensorflow.org/tutorials/images/classification).

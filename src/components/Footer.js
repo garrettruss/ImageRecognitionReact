@@ -2,7 +2,7 @@
 function Footer(props) {
     return (
       <footer>
-       Have a Great Day!
+       “An investment in knowledge pays the best interest.” — Benjamin Franklin
       </footer>
     );
 }

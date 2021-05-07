@@ -102,8 +102,11 @@ function App() {
 
               {showCongrats && (
               <>
-              <div>
-                "Can machines do what we (as thinking entities) can do?" - Alan Turing, Computing Machinery and Intelligence. 1950.
+              <div className='turing'>
+                "Can machines do what we (as thinking entities) can do?" 
+                <br></br>
+                <br></br>
+                - Alan Turing, Computing Machinery and Intelligence. 1950.
               </div>
               </>
             )} 
@@ -115,7 +118,7 @@ function App() {
                    < >
                     {results.map(({ className, probability }) => (
                       <div key={className}>
-                        {`Our model believes it is a ${className} with ${(probability * 100).toFixed(2)}% certainty`}
+                        {`${className} with ${(probability * 100).toFixed(2)}% certainty`}
                       </div>
                     ))}
                    </>
@@ -126,7 +129,7 @@ function App() {
 
                {showBrief && (
               <>
-              <p>The Model is now ready for your use. If you are on a mobile device, when you click upload image to model, your camera will open and you can take a picture. If you are on a desktop, your folders should open allowing you to add a picture from your computer.</p>
+              <p className="ready">The Model is now ready for your use. If you are on a mobile device, when you click upload image to model, your camera will open and you can take a picture. If you are on a desktop, your folders should open allowing you to add a picture from your computer.</p>
               </>
             )}  
 
