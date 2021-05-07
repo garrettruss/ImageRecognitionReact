@@ -7,14 +7,14 @@ import Welcome from "./components/Welcome";
 import "./App.css";
 
 const machine = {
-  initial: "initial",
+  start: "start",
   states: {
-    initial: { on: { next: "loadingModel" } },
-    loadingModel: { on: { next: "modelReady" } },
-    modelReady: { on: { next: "imageReady" }, showBrief: true },
-    imageReady: { on: { next: "identifying" }, showImage: true, showCongrats: true },
-    identifying: { on: { next: "complete" } },
-    complete: { on: { next: "modelReady" }, showImage: true, showResults: true }
+    start: { on: { subsequent: "preparingModel" } },
+    preparingModel: { on: { subsequent: "modelPrepared" } },
+    modelPrepared: { on: { subsequent: "imageSet" }, showBrief: true },
+    imageSet: { on: { subsequent: "analyzing" }, showImage: true, showCongrats: true },
+    analyzing: { on: { subsequent: "complete" } },
+    complete: { on: { subsequent: "modelPrepared" }, showImage: true, showResults: true }
   }
 };
 
@@ -29,28 +29,29 @@ function App() {
   const inputRef = useRef();
 
   const reducer = (state, event) =>
-    machine.states[state].on[event] || machine.initial;
+    machine.states[state].on[event] || machine.start;
 
-  const [appState, dispatch] = useReducer(reducer, machine.initial);
-  const next = () => dispatch("next");
+  const [appState, dispatch] = useReducer(reducer, machine.start);
 
-  const loadModel = async () => {
-    next();
+  const subsequent = () => dispatch("subsequent");
+
+  const getModel = async () => {
+    subsequent();
     const model = await mobilenet.load();
     setModel(model);
-    next();
+    subsequent();
   };
 
   const identify = async () => {
-    next();
+    subsequent();
     const results = await model.classify(imageRef.current);
     setResults(results);
-    next();
+    subsequent();
   };
 
   const reset = async () => {
     setResults([]);
-    next();
+    subsequent();
   };
 
   const upload = () => inputRef.current.click();
@@ -60,16 +61,16 @@ function App() {
     if (files.length > 0) {
       const url = URL.createObjectURL(event.target.files[0]);
       setImageURL(url);
-      next();
+      subsequent();
     }
   };
 
   const moverButton = {
-    initial: { action: loadModel, text: "Greetings, Click Here To Load The Model"},
-    loadingModel: { text: "Preparing Model For Use" },
-    modelReady: { action: upload, text: "Click To Upload Image" },
-    imageReady: { action: identify, text: "Click To Identify Content Of Image" },
-    identifying: { text: "Identifying..." },
+    start: { action: getModel, text: "Greetings, Click Here To Load The Model"},
+    preparingModel: { text: "Preparing Model For Use" },
+    modelPrepared: { action: upload, text: "Click To Add Image" },
+    imageSet: { action: identify, text: "Click To Identify Content Of Image" },
+    analyzing: { text: "Analyzing Image..." },
     complete: { action: reset, text: "Reset" }
   };
 
@@ -102,7 +103,7 @@ function App() {
               {showCongrats && (
               <>
               <div>
-                This is exciting!
+                "Can machines do what we (as thinking entities) can do?" - Alan Turing, Computing Machinery and Intelligence. 1950.
               </div>
               </>
             )} 

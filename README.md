@@ -1,10 +1,12 @@
 # TensorFlow.js Image Classification React App
 
-In this Single Page React App, users are introduced to Machine Learning. Users can take a picture or import an image to be analyzed by the TensorFlow.js Image Classification Mobilenet model. TensorFlow.js is a JavaScript library developed by Google for training and using machine learning (ML) models in the browser. It contains pretrained models that can be imported into an application without having to train the model yourself. In this format, users don't have to think about things such as Tensors, which are the core datastructure of TensorFlow.js.
+Users can take a picture or import an image to be analyzed by the TensorFlow.js Image Classification Mobilenet model which can recognize 1000 different animals and objects. TensorFlow.js is a JavaScript library developed by Google for training and using machine learning (ML) models in the browser. It contains pretrained models, such as Mobilenet that can be imported into an application without having to train the model yourself. In this format, users don't have to think about things such as Tensors, which are the core datastructure of TensorFlow.js.
 
-In this example, an event-driven finite state machine, along with a reducer, control what state the app is in. The reducer function takes the current state and an event, then return a new state based on whatever that event was fired. Here there is only one type of event called next. Whenever the next event is triggered, it brings you to the next step. useReducer takes 2 arguments, the reducer function and your intital state. State is a string that represents whatever state you are in now. Dispatch is a function that will allow you to fire an event into the reducer function in order to get a new state. Through button onClick you fire off the next event in the dispatch.
+In this example, an event-driven finite state machine, along with a reducer, and dispatch, control what state the app is in. The reducer function takes the current state and an event, then return a new state based on whatever event was fired. Here there is only one event is one called subsequent for 'subsequent state'. Whenever the event is triggered, the reducer will cause a new state and associated UI to be returned. Using React's useReducer function, we can pass in the reducer function and the state. This works with the with the dispatch function that will allow you to fire an event into the reducer function in order to get a new state. Through button onClick you fire off the subsequent event in the dispatch.
 
 Depending on what state you are in, different components will be displayed. This is done because loading of the model and classifying/identifying the predictions are both asynchronous events. We therefore have intermediary states to show the user that we are waiting on the model.
+
+This is all done through the moverButton function which is triggered when a button is clicked. Once the button is clicked, the moverButton function is triggered causing a series of other actions such as preparing the model, uploading the photo, and using the subsequent event to change state and UI.  
 
 ## Technologies Used
 
@@ -28,7 +30,6 @@ Depending on what state you are in, different components will be displayed. This
 * [https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet]
 * [https://reactjs.org/docs/state-an]
 * [https://dmitripavlutin.com/react-useref-guide/]
-* [https://levelup.gitconnected.com/build-ad-dog-classifier-with-react-and-tensorflow-js-in-minutes-f08e98608a65]
 * [https://reactjs.org/docs/hooks-reference.html]
 * [https://mastery.games/post/state-machines-in-react/]
 * [https://css-tricks.com/understanding-how-reducers-are-used-in-redux/]
@@ -40,6 +41,10 @@ Depending on what state you are in, different components will be displayed. This
 
 #### Unsolved Issues
 
-##### Future Enhancements
+* None at the moment.
 
-* Add a service-worker file for a PWA from react.
+##### Next
+
+* Use TensorFlow.js in Node. [See here](https://www.tensorflow.org/js/guide/nodejs).
+* Build a transfer-learning based image classifier to recognize new classes other than the 1000 pretrained classes. [See here](https://www.tensorflow.org/js/tutorials/transfer/what_is_transfer_learning).
+* Build an image classifier app with TensorFlow on Python [See here](https://www.tensorflow.org/tutorials/images/classification).
