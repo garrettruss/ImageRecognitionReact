@@ -117,7 +117,7 @@ function App() {
                   <h2>Image result predictions:</h2>
                    < >
                     {results.map(({ className, probability }) => (
-                      <div key={className}>
+                      <div className="results" key={className}>
                         {`${className} with ${(probability * 100).toFixed(2)}% certainty`}
                       </div>
                     ))}
@@ -129,7 +129,7 @@ function App() {
 
                {showBrief && (
               <>
-              <p className="ready">The Model is now ready for your use. If you are on a mobile device, when you click upload image to model, your camera will open and you can take a picture. If you are on a desktop, your folders should open allowing you to add a picture from your computer.</p>
+              <p className="ready">The Model is now ready for your use. If you are on a mobile device, when you select Click To Add Image, your camera will open and you can take a picture. If you are on a desktop, your folders should open allowing you to add a picture from your computer.</p>
               </>
             )}  
 

@@ -2,7 +2,7 @@
 function Footer(props) {
     return (
       <footer>
-       “An investment in knowledge pays the best interest.” — Benjamin Franklin
+       Garrett Russ &copy; 2021
       </footer>
     );
 }
