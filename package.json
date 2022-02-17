@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "check-node-version": "^4.2.1",
     "firebase": "^8.10.1",
     "heroku-builds": "^0.0.29",
     "react": "^17.0.2",
