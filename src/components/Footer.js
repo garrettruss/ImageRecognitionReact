@@ -2,7 +2,7 @@
 function Footer(props) {
     return (
       <footer>
-       Garrett Russ &copy; 2022
+       Garrett Russ &copy; 2021
       </footer>
     );
 }
